@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MemoryMemberRepository implements MemberRepository {
 
-    private Map<Long, Member> store = new HashMap<>();
+    private static Map<Long, Member> store = new HashMap<>();
     //동시성 이슈 발생 가능성 있음
 
     @Override
@@ -13,8 +13,13 @@ public class MemoryMemberRepository implements MemberRepository {
         store.put(member.getId(),member);
     }
 
+    
     @Override
     public Member findById(Long memberId) {
+
+        System.out.println("store = " + store);
         return store.get(memberId);
     }
+
+    
 }
