@@ -12,9 +12,5 @@ import org.springframework.context.annotation.FilterType;
 // AppConfig를 뺄 것이란느 의미
 public class AutoAppConfig
 {
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository()
-    {
-        return new MemoryMemberRepository();
-    }
+
 }
